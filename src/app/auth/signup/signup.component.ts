@@ -28,10 +28,10 @@ export class SignupComponent implements OnInit {
         Validators.maxLength(20),
       ]),
     },
-    { validators: [this.matchPassword.validate] }
+    [MatchPassword]
   );
 
-  constructor(private matchPassword: MatchPassword) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

@@ -43,6 +43,7 @@
   </div>
 
   <div>is Invalid? {{ authForm.invalid }}</div>
+  <div>all errors {{ authForm.errors | json }}</div>
   <div>errors: {{ authForm.get("username")?.errors | json }}</div>
   <div>errors: {{ authForm.get("password")?.errors | json }}</div>
   <div>errors: {{ authForm.get("passwordConfirmation")?.errors | json }}</div>
