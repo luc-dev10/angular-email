@@ -7,18 +7,30 @@
           <p class="card-text">Send and receive emails today</p>
 
           <!-- form -->
-          <form>
+          <form [formGroup]="authForm">
             <div class="form-group pb-3">
               <label class="pb-1">Username</label>
-              <input type="text" class="form-control" />
+              <input
+                formControlName="username"
+                type="text"
+                class="form-control"
+              />
             </div>
             <div class="form-group pb-3">
               <label class="pb-1">Password</label>
-              <input type="password" class="form-control" />
+              <input
+                formControlName="password"
+                type="password"
+                class="form-control"
+              />
             </div>
             <div class="form-group pb-3">
               <label class="pb-1">Confirm Password</label>
-              <input type="password" class="form-control" />
+              <input
+                formControlName="passwordConfirmation"
+                type="password"
+                class="form-control"
+              />
             </div>
             <button type="submit" class="btn btn-primary mb-4 mt-1">
               Sign Up
@@ -29,4 +41,9 @@
       </div>
     </div>
   </div>
+
+  <div>is Invalid? {{ authForm.invalid }}</div>
+  <div>errors: {{ authForm.get("username")?.errors | json }}</div>
+  <div>errors: {{ authForm.get("password")?.errors | json }}</div>
+  <div>errors: {{ authForm.get("passwordConfirmation")?.errors | json }}</div>
 </div>
